@@ -1,0 +1,7 @@
+.Title {    
+display: flex;
+justify-content: center;
+color: rgb(188, 103, 103);
+text-align: center;
+font-size: x-large;
+}
