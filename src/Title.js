@@ -4,7 +4,7 @@ import React from 'react'
 function Title() {
     return (
         <div className="Title">
-            <h1>Hannah Choi</h1>
+            <h1>Oditha is 0100110001001111010100110100010101010010.</h1>
         </div>
     )
 }
