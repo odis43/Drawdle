@@ -1,12 +1,13 @@
-import { getByTitle } from '@testing-library/react'
+import logo from './dalogo';
 import React from 'react'
+import './Title.css';
 
 function Title() {
     return (
-        <div className="Title">
-            <h1>Hannah Oditha</h1>
+        <div className='logo'>
+             <img src= {logo} width={650} height={500} alt='logo' />
         </div>
-    )
+    );
 }
 
 export default Title 
