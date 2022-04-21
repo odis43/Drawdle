@@ -4,7 +4,7 @@ import React from 'react'
 function Title() {
     return (
         <div className="Title">
-            <h1>Hannah Oditha</h1>
+            <h1>Hannah Choi</h1>
         </div>
     )
 }
