@@ -1,5 +1,6 @@
 import React from 'react'
 import './Title.css';
+import play from './playbutton.png';
 
 class Title extends React.Component {
 
@@ -28,6 +29,9 @@ class Title extends React.Component {
     return (
       <div className='logo'>
         <img onMouseOver={this.handleMouseOver} onMouseOut={this.handleMouseOut} src={this.state.imgSrc} width = {1000} heigth = {900} alt = 'Logo'/>
+        <button>
+        <img src={play}alt = 'Logo'/>
+        </button>
       </div>
     );
   }
