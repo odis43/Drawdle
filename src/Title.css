@@ -1,13 +1,7 @@
 .logo {
   display: flex;
-<<<<<<< HEAD
-  justify-content: center;
-  position: absolute;
-  right: 12.5em;
-=======
   justify-content:center;
   position: absolute;
   right: 12.5em;
-  top: 3em;
->>>>>>> e6d9ae2ac073861444a348b0e7ebafdb52ec8458
+  top: 3em
 }
