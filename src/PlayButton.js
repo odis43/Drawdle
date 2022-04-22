@@ -15,7 +15,7 @@ class PlayButton extends React.Component {
         return (
           <div className='playbutton'>
               <button>
-                <img src={play} width = {100} heigth = {50} alt = 'Play'/>
+                <img src={play} width = {100} height = {50} alt = 'Play'/>
               </button>
           </div>
           
