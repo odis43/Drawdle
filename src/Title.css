@@ -1,5 +1,7 @@
 .logo {
   display: flex;
-  align-items:center;
   justify-content:center;
+  position: absolute;
+  right: 12.5em;
+  top: 3em;
 }

@@ -27,7 +27,7 @@ class Title extends React.Component {
   render() {
     return (
       <div className='logo'>
-        <img onMouseOver={this.handleMouseOver} onMouseOut={this.handleMouseOut} src={this.state.imgSrc} width = {1000} heigth = {900} alt = 'Logo'/>
+        <img onMouseOver={this.handleMouseOver} onMouseOut={this.handleMouseOut} src={this.state.imgSrc} width = {900} heigth = {850} alt = 'Logo'/>
       </div>
     );
   }
