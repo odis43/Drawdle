@@ -1,6 +1,5 @@
 import React from 'react'
 import './Title.css';
-import play from './playbutton.png';
 
 class Title extends React.Component {
 
