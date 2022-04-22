@@ -9,7 +9,6 @@ class App extends Component {
   render() {
     const myStyle={
       backgroundImage: "url('http://localhost:3000/paper.png')",
-      height: '100vh',
       backgroundPosition: 'relative',
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat'
