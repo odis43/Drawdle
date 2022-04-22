@@ -7,6 +7,7 @@ import Title from './Title';
 import './Title.css';
 import PlayButton from './PlayButton';
 import './PlayButton.css';
+
 class App extends Component {
   render() {
     const myStyle={
