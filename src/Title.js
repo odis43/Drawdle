@@ -5,7 +5,7 @@ import './Title.css';
 function Title() {
     return (
         <div className='logo'>
-             <img src= {logo} width={650} height={500} alt='logo' />
+             <img src= {logo} width={1250} height={1000} alt='logo' />
         </div>
     );
 }
