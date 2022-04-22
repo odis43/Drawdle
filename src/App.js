@@ -7,6 +7,10 @@ import Title from './Title';
 import './Title.css';
 import PlayButton from './PlayButton';
 import './PlayButton.css';
+import './Rules.css';
+import Rules from './Rules';
+
+
 class App extends Component {
   render() {
     const myStyle={
@@ -21,6 +25,7 @@ class App extends Component {
       <div className="App">
         <Title/>
         <PlayButton/>
+        <Rules/>
       </div>
     </div>
   );
