@@ -5,6 +5,8 @@ import React, { Component } from 'react';
 
 import Title from './Title';
 import './Title.css';
+import PlayButton from './PlayButton';
+import './PlayButton.css';
 class App extends Component {
   render() {
     const myStyle={
@@ -18,6 +20,7 @@ class App extends Component {
     <div style={myStyle}>
       <div className="App">
         <Title/>
+        <PlayButton/>
       </div>
     </div>
   );
