@@ -1,0 +1,7 @@
+.playbutton {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    right: 40em;
+    top: 35em;
+}
