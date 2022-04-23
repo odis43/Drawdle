@@ -6,11 +6,9 @@ import PlayButton from './PlayButton';
 function Nav() {
     return (
         <nav>
-            
-                <Link to= '/Game'>
-                    <PlayButton />
-                </Link>
-            
+            <Link to= '/Game'>
+                <PlayButton />
+            </Link>
         </nav>
     )
 }
