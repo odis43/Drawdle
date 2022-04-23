@@ -1,5 +1,8 @@
 import React from 'react'
 import './PlayButton.css';
+import logo2 from './difflogo';
+import logo from './dalogo';
+import Title from './Title';
 
 class PlayButton extends React.Component {
 
@@ -16,6 +19,7 @@ class PlayButton extends React.Component {
         this.setState({
             imgSrc: require('./playbuttonblue.png')
         });
+        this.changeState();
     }
 
     handleMouseOut () {
