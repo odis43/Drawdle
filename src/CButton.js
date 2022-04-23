@@ -1,7 +1,8 @@
+import { isDisabled } from '@testing-library/user-event/dist/utils';
 import React from 'react'
-import './PlayButton.css';
+import './CButton.css';
 
-class PlayButton extends React.Component {
+class CButton extends React.Component {
 
     constructor(props) {
         super(props);
@@ -38,11 +39,11 @@ class PlayButton extends React.Component {
     render() {
         return (
           <div className='playbutton'>
-              <a href='./Rule'>
+              <a href='./Game'>
                 <button className='buttonprop' onClick={this.handleClick} disabled={this.state.disabled}>
                 {this.state.disabled ? '' : 
-                <img onMouseOver={this.handleMouseOver} onMouseOut={this.handleMouseOut} 
-                src={this.state.imgSrc} width = {100} height = {50} alt = 'Play'/>}
+                <img onMouseOver={this. handleMouseOver} onMouseOut={this.handleMouseOut} 
+                src={this.state.imgSrc} width = {100} height = {50} alt = 'Continue'/>}
                 </button>
               </a>
           </div>          
@@ -55,4 +56,4 @@ PlayButton.propTypes = {
 
 PlayButton.defaultProps = {
 }
-export default PlayButton
+export default CButton

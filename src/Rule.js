@@ -1,7 +1,7 @@
 import React, {Component} from "react";
-import './Game.css';
+import './Rule.css';
 
-    class Game extends Component {
+    class Menu extends Component {
         render() {
           const myStyle={
             backgroundImage: "url('http://localhost:3000/paper.png')",
@@ -13,13 +13,12 @@ import './Game.css';
           
         return (
           <div style={myStyle}>
-            <div style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '100vh'}} className = 'Gamebox'>
+            <div className = 'Rule'>
             
             </div>
-
           </div>
         );
       }
-      }
+    }
 
-    export default Game;
+export default Menu
