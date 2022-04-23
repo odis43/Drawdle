@@ -7,7 +7,7 @@ function Nav() {
     return (
         <nav>
             <Link to= '/Game'>
-                <PlayButton />
+                
             </Link>
         </nav>
     )

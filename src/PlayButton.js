@@ -18,15 +18,12 @@ class PlayButton extends React.Component {
     }
 
     // On-click
-    handleClick () {
+    handleClick = (event) => {
         if (this.state.disabled) {
-            this.setState({
-                imgSrc: require('./blank.png')
-            });
             return;
         }
         this.setState({
-            disabled: true,
+            disabled: true
         });
     }
 
@@ -47,11 +44,9 @@ class PlayButton extends React.Component {
           <div className='playbutton'>
               <a href='./Game'>
                 <button className='buttonprop' onClick={this.handleClick} disabled={this.state.disabled}>
-                <img 
-                handleClick={this. handleClick}
-                onMouseOver={this. handleMouseOver} 
-                onMouseOut={this.handleMouseOut} 
-                src={this.state.imgSrc} width = {100} height = {50} alt = 'Play'/>
+                {this.state.disabled ? '' : 
+                <img onMouseOver={this. handleMouseOver} onMouseOut={this.handleMouseOut} 
+                src={this.state.imgSrc} width = {100} height = {50} alt = 'Play'/>}
                 </button>
               </a>
           </div>          
