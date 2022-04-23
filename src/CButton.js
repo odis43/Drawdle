@@ -7,7 +7,7 @@ class CButton extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-           imgSrc: require('./playbutton.png'),
+           imgSrc: require('./cbuttonblack.png'),
            disabled: false
         };
     this.handleMouseOver = this.handleMouseOver.bind(this);
@@ -26,24 +26,24 @@ class CButton extends React.Component {
 
     handleMouseOver () {
         this.setState({
-            imgSrc: require('./playbuttonblue.png')
+            imgSrc: require('./cbuttoncolourful.png')
         });
         this.changeState();
     }
 
     handleMouseOut () {
         this.setState({
-            imgSrc: require('./playbutton.png')
+            imgSrc: require('./cbuttonblack.png')
         });
     }
     render() {
         return (
-          <div className='playbutton'>
+          <div className='cbutton'>
               <a href='./Game'>
                 <button className='buttonprop' onClick={this.handleClick} disabled={this.state.disabled}>
                 {this.state.disabled ? '' : 
                 <img onMouseOver={this. handleMouseOver} onMouseOut={this.handleMouseOut} 
-                src={this.state.imgSrc} width = {100} height = {50} alt = 'Continue'/>}
+                src={this.state.imgSrc} width = {225} height = {50} alt = 'Continue'/>}
                 </button>
               </a>
           </div>          
@@ -51,9 +51,9 @@ class CButton extends React.Component {
     }
 }
 
-PlayButton.propTypes = {
+CButton.propTypes = {
 }
 
-PlayButton.defaultProps = {
+CButton.defaultProps = {
 }
 export default CButton

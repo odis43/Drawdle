@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import './Rule.css';
+import CButton from './CButton';
 
     class Menu extends Component {
         render() {
@@ -14,7 +15,7 @@ import './Rule.css';
         return (
           <div style={myStyle}>
             <div className = 'Rule'>
-            
+              <CButton />
             </div>
           </div>
         );
