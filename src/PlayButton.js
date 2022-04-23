@@ -26,13 +26,8 @@ class PlayButton extends React.Component {
     render() {
         return (
           <div className='playbutton'>
-<<<<<<< HEAD
-              <button>
-                <img src={play} width = {100} height = {50} alt = 'Play'/>
-=======
              <button className='buttonprop'>
               <img onMouseOver={this.handleMouseOver} onMouseOut={this.handleMouseOut} src={this.state.imgSrc} width = {100} heigth = {50} alt = 'Play'/>
->>>>>>> 522ac42d2bd5b7bcddbea21eb92c3cba0d34459b
               </button>
           </div>          
         );
