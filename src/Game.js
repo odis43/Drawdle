@@ -1,7 +1,9 @@
 import React, {Component} from "react";
 import './Game.css';
 import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
 import { ReactSketchCanvas } from 'react-sketch-canvas';
+import Timer from './Timer';
 
   const styles = {
     
@@ -11,7 +13,7 @@ import { ReactSketchCanvas } from 'react-sketch-canvas';
       
         render() {
           const myStyle={
-            backgroundImage: "url('http://localhost:3000/paper.png')",
+            backgroundImage: `url(${process.env.PUBLIC_URL + '/paper.png'})`,
             height: '100vh',
             backgroundPosition: 'relative',
             backgroundSize: 'cover',
@@ -19,9 +21,11 @@ import { ReactSketchCanvas } from 'react-sketch-canvas';
           };
 
         return (
-        
           <div style={myStyle}>
-            <div className = 'Gamebox' style={{}}>
+            <div>
+              <Timer/>
+            </div>
+            <div className = 'Gamebox'>
             <ReactSketchCanvas 
             width="100"
             height="100"
@@ -32,6 +36,7 @@ import { ReactSketchCanvas } from 'react-sketch-canvas';
             style = {myStyle}
             />
             </div>
+            
           </div>
         );
       }
