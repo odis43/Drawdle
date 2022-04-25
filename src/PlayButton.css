@@ -1,9 +1,8 @@
 .playbutton {
     display: flex;
     justify-content: center;
-    position: absolute;
-    right: 40em;
-    top: 34.5em;
+    position: sticky;
+    top: 38.5em;
 }
 
 .buttonprop {
