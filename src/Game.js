@@ -11,7 +11,7 @@ import { ReactSketchCanvas } from 'react-sketch-canvas';
       
         render() {
           const myStyle={
-            backgroundImage: "url('http://localhost:3000/paper.png')",
+            backgroundImage: `url(${process.env.PUBLIC_URL + '/paper.png'})`, 
             height: '100vh',
             backgroundPosition: 'relative',
             backgroundSize: 'cover',

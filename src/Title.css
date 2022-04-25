@@ -1,7 +1,6 @@
 .logo {
   display: flex;
   justify-content:center;
-  position: absolute;
-  right: 12.5em;
-  top: 3em;
+  position: sticky;
+  top: 10em;
 }
