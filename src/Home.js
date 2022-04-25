@@ -11,13 +11,11 @@ import './Title.css';
 import PlayButton from './PlayButton';
 import './PlayButton.css';
 
-
 class Homepg extends Component {
   render() {
     const myStyle={
-      backgroundImage: "url('http://localhost:3000/paper.png')",
-      height: '100vh',
-      backgroundPosition: 'relative',
+      backgroundImage: `url(${process.env.PUBLIC_URL + '/paper.png'})`,
+      backgroundPosition:'relative',
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat'
     };
