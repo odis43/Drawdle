@@ -1,3 +1,4 @@
+import { hover } from '@testing-library/user-event/dist/hover';
 import React from 'react'
 import './PlayButton.css';
 
@@ -27,7 +28,7 @@ class PlayButton extends React.Component {
         this.setState({
             imgSrc: require('./playbuttonblue.png')
         });
-        this.changeState();
+        
     }
 
     handleMouseOut () {
@@ -35,13 +36,16 @@ class PlayButton extends React.Component {
             imgSrc: require('./playbutton.png')
         });
     }
+
+
     render() {
         return (
           <div className='playbutton'>
               <a href='./Rule'>
                 <button className='buttonprop' onClick={this.handleClick} disabled={this.state.disabled}>
                 {this.state.disabled ? '' : 
-                <img onMouseOver={this.handleMouseOver} onMouseOut={this.handleMouseOut} 
+                <img onMouseOver={this.handleMouseOver}
+                 onMouseOut={this.handleMouseOut}  
                 src={this.state.imgSrc} width = {100} height = {50} alt = 'Play'/>}
                 </button>
               </a>
