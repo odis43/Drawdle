@@ -1,15 +1,18 @@
 import React from 'react'
-import './Title.css';
+import './Title.css'
+import playHoverProvider from './playHoverProvider'
 
 class Title extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-       imgSrc: require('./dalogo')
+       imgSrc: require('./dalogo'),
+       control: require('./dalogo')
     };
     this.handleMouseOver = this.handleMouseOver.bind(this);
     this.handleMouseOut = this.handleMouseOut.bind(this);
+
   }
 
   handleMouseOver() {
@@ -24,6 +27,7 @@ class Title extends React.Component {
     });
   }
 
+
   render() {
     return (
       <div className='logo'>
@@ -33,7 +37,7 @@ class Title extends React.Component {
                 flex: 1,
                 height: null,
         }}
-                alt = 'Logo'/>
+                alt = 'Logo' />
             </view>
       </div>
     );
