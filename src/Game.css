@@ -1,3 +1,11 @@
 .Gamebox {
     top: 3.5em;
 }
+
+.word {
+    font-size: x-large;
+    display:inline;
+    position: relative;
+   
+    left: 30em;
+}
