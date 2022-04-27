@@ -1,9 +1,8 @@
 .cbutton {
     display: flex;
     justify-content: center;
-    position: absolute;
-    right: 40em;
-    top: 34.5em;
+    position: relative;
+    top: 8.5em;
 }
 
 .buttonprop {
