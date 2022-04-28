@@ -1,10 +1,8 @@
 import React, {Component} from "react";
 import './Game.css';
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
 import { ReactSketchCanvas } from 'react-sketch-canvas';
 import Timer from './Timer';
-import { responsiveProperty } from "@mui/material/styles/cssUtils";
+import axios from "axios";
 
     class Game extends Component {
 
@@ -13,18 +11,29 @@ import { responsiveProperty } from "@mui/material/styles/cssUtils";
         this.canvas = React.createRef();
         this.state = {
             loading: true,
-            word: null
+            word: null,
+            valid: false
         };
       }
-
-      async componentDidMount () {
-        const url = "https://random-word-form.herokuapp.com/random/noun";
-        const response = await fetch(url);
-        const data = await response.json();
-        this.setState({word: data, loading:false});
-      }
+  
+       componentDidMount () {
+        axios.get('https://random-word-form.herokuapp.com/random/noun')
       
+        .then(response => {
+          this.setState({
+              word: response.data,
+              loading: false
+          })
+          return response.data
+        })
+      }
+
+      handleWord() {
+        return this.state.word
+      }
+
         render() {
+           let blip = "";
           const myStyle={
             backgroundImage: `url(${process.env.PUBLIC_URL})`, 
             height: '100vh',
@@ -37,18 +46,31 @@ import { responsiveProperty } from "@mui/material/styles/cssUtils";
           <div style={myStyle}>
               <Timer/>
            <div>
-             {this.state.loading || this.state.person ? (<div>loading..</div>):
+             {this.state.loading? (<div>loading..</div>):
              (<div>
                <div className="word">{this.state.word}</div>
              </div>)}
            </div>
 
            <div>
-           <button onClick={() => {
-            
+           <button onClick={() => { 
+            let W = this.handleWord()
+            let valid = false;
             this.canvas.current.exportImage("jpeg")
               .then(imagedata => {
-                console.log(imagedata);
+                fetch('https://hf.space/embed/Salesforce/BLIP/+/api/predict/', { method: "POST", body: JSON.stringify({"data":[imagedata,"Image Captioning","None","Beam Sampling"]}), headers: { "Content-Type": "application/json" } })
+
+                .then(function(response) { 
+                  return response.json(); })
+                .then(function(json_response)
+                
+                {blip = json_response.data 
+                  console.log(blip)
+                  console.log(W)
+                  valid = blip.includes(W)
+                  console.log(valid)
+                  
+                })
               })
               .catch(e => {
                 console.log(e);
@@ -58,6 +80,7 @@ import { responsiveProperty } from "@mui/material/styles/cssUtils";
             Submit Drawing!
             </button>
            </div>
+
             <div className = 'Gamebox'>
             <ReactSketchCanvas 
             ref={this.canvas}
