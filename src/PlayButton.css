@@ -1,15 +1,21 @@
 .playbutton {
     display: flex;
     justify-content: center;
+<<<<<<< HEAD
     position: relative;
 <<<<<<< HEAD
     top: 8.5em;
 =======
     top: 35em;
 >>>>>>> 25cb37c2668794df84a5180c6bd13e015825f1f5
+=======
+    position: absolute;
+    top: 35em;
+    right: 43em;
+>>>>>>> 8c7e4253aa5dd409077663e2d7ad26f55767530d
 }
 
-.buttonprop {
+.buttonprop2 {    
     background-color: rgba(241, 249, 250, 0);
     border: none;
     font-size: 20px;

@@ -4,3 +4,7 @@
   position: sticky;
   top: 8.5em;
 }
+
+.zoom{
+  transform: scale(1.2);
+}

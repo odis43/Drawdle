@@ -1,15 +1,18 @@
-import React, { Component } from 'react';
-import PlayButton from './PlayButton';
+//i dont think we need this file
 
-class playHoverProvider extends Component {
+export const MContext = React.createContext();
 
-  Parentfunction () {
-    this.PlayButton.beinghovered();
-  }
-
-  render() {
-    return <PlayButton ref={component => this.PlayButton = component} />
-  }
+  class playHoverProvider extends Component {
+    state = {message: './difflogo'}
+     render() {
+        return (
+            <MContext.Provider value={
+            {   state: this.state,
+                setMessage: (value) => this.setState({
+                            message: value })}}>
+            {this.props.children}   //this indicates that all the child tags with MyProvider as Parent can access the global store.
+            </MContext.Provider>)
+    }
 }
 
 export default playHoverProvider
