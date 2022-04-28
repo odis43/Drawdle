@@ -1,5 +1,7 @@
 import React from 'react'
+import PlayButton from './PlayButton';
 import './Title.css';
+import difflogo from './difflogo'
 
 class Title extends React.Component {
 
@@ -25,21 +27,36 @@ class Title extends React.Component {
   }
 
   render() {
-    return (
-      <div className='logo'>
-          <view>
-        <img onMouseOver={this.handleMouseOver} onMouseOut={this.handleMouseOut} src={this.state.imgSrc} 
-        style={{width: 800,
-                flex: 1,
-                height: null,
-        }}
-                alt = 'Logo'/>
-            </view>
-      </div>
-    );
+    if (this.props.messageFromParent === false) {
+      return (  
+        <div className='logo'>
+            <view>
+            <img src={difflogo} 
+          style={{width: 800,
+                  flex: 1,
+                  height: null,
+          }}
+          
+                  alt = 'Logo'/>
+              </view>
+        </div>
+      );
+    } else {
+      return (  
+        <div className='logo'>
+            <view>
+          <img onMouseOver={this.handleMouseOver} onMouseOut={this.handleMouseOut} src={this.state.imgSrc} 
+          style={{width: 800,
+                  flex: 1,
+                  height: null,
+          }}
+          
+                  alt = 'Logo'/>
+              </view>
+        </div>
+      );
+    }
   }
-
-
 }
 
 Title.propTypes = {

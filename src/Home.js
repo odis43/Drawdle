@@ -11,7 +11,13 @@ import './Title.css';
 import PlayButton from './PlayButton';
 import './PlayButton.css';
 
-class Homepg extends Component {
+class Homepg extends React.Component {
+  state = {message: true}
+
+  handleCallback = (PlayButtonData) => {
+    this.setState({message: PlayButtonData})
+  }
+
   render() {
     const myStyle={
       backgroundImage: `url(${process.env.PUBLIC_URL + '/paper.png'})`,  
@@ -20,15 +26,19 @@ class Homepg extends Component {
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat'
     };
-  return (
-    <div style={myStyle}>
+
+    const {message} = this.state
+
+    return (
+      <div style={myStyle}>
       <div className="App">
-        <Title/>
-        <PlayButton/>
+        <PlayButton parentCallback={this.handleCallback} />
+        <Title messageFromParent={this.state.message} />
       </div>
     </div>
-  );
+    );
+  }
 }
-}
+
 
 export default Homepg;

@@ -1,5 +1,7 @@
+import { findAllByTestId } from '@testing-library/react';
 import React from 'react'
 import './PlayButton.css';
+import './Title';
 
 class PlayButton extends React.Component {
 
@@ -7,7 +9,9 @@ class PlayButton extends React.Component {
         super(props);
         this.state = {
            imgSrc: require('./playbutton.png'),
-           disabled: false
+           disabled: false,
+           data: false,
+           test: "false"
         };
     this.handleMouseOver = this.handleMouseOver.bind(this);
     this.handleMouseOut = this.handleMouseOut.bind(this);
@@ -25,27 +29,38 @@ class PlayButton extends React.Component {
 
     handleMouseOver () {
         this.setState({
-            imgSrc: require('./playbuttonblue.png')
+            imgSrc: require('./playbuttonblue.png'),
+            data: true,
+            test: "true"
         });
         this.changeState();
     }
 
     handleMouseOut () {
         this.setState({
-            imgSrc: require('./playbutton.png')
+            imgSrc: require('./playbutton.png'),
+            data: false,
+            test: "false"
         });
     }
+
+    sendData = () => {
+        this.props.parentCallback(this.state.data);
+    }
+
     render() {
         return (
+                        
           <div className='playbutton'>
               <a href='./Rule'>
                 <button className='buttonprop' onClick={this.handleClick} disabled={this.state.disabled}>
                 {this.state.disabled ? '' : 
-                <img onMouseOver={this.handleMouseOver} onMouseOut={this.handleMouseOut} 
-                src={this.state.imgSrc} width = {100} height = {50} alt = 'Play'/>}
+                <img onMouseOver= {this.handleMouseOver} onMouseOut= {this.handleMouseOut} onMouseEnter= {this.sendData} onMouseLeave= {this.sendData}
+                    src={this.state.imgSrc} width = {100} height = {50} alt = 'Play'/>}
                 </button>
               </a>
-          </div>          
+          </div>   
+            
         );
     }
 }
