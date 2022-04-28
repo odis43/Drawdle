@@ -4,7 +4,6 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import { ReactSketchCanvas } from 'react-sketch-canvas';
 import Timer from './Timer';
-import useSound from 'use-sound';
 
   const styles = {
     

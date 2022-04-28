@@ -53,7 +53,7 @@ class PlayButton extends React.Component {
                         
           <div className='playbutton'>
               <a href='./Rule'>
-                <button className='buttonprop' onClick={this.handleClick} disabled={this.state.disabled}>
+                <button className='buttonprop2' onClick={this.handleClick} disabled={this.state.disabled}>
                 {this.state.disabled ? '' : 
                 <img onMouseOver= {this.handleMouseOver} onMouseOut= {this.handleMouseOut} onMouseEnter= {this.sendData} onMouseLeave= {this.sendData}
                     src={this.state.imgSrc} width = {100} height = {50} alt = 'Play'/>}

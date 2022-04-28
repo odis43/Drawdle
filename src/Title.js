@@ -29,7 +29,7 @@ class Title extends React.Component {
   render() {
     if (this.props.messageFromParent === false) {
       return (  
-        <div className='logo'>
+        <div className='logo'> 
             <view>
             <img src={difflogo} 
           style={{width: 800,
@@ -37,10 +37,11 @@ class Title extends React.Component {
                   height: null,
           }}
           
-                  alt = 'Logo'/>
+                  alt = 'Logo'
+                  className='zoom'/>
               </view>
         </div>
-      );
+      )
     } else {
       return (  
         <div className='logo'>
