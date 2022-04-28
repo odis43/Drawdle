@@ -18,7 +18,7 @@ import axios from "axios";
       }
   
        componentDidMount () {
-        axios.get('https://random-word-api.herokuapp.com/word')
+        axios.get('https://equal-wooded-square.glitch.me/api?generator=concrete-noun&list=noun')
       
         .then(response => {
           this.setState({
