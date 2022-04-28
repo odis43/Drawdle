@@ -2,7 +2,11 @@
     display: flex;
     justify-content: center;
     position: relative;
+<<<<<<< HEAD
     top: 8.5em;
+=======
+    top: 35em;
+>>>>>>> 25cb37c2668794df84a5180c6bd13e015825f1f5
 }
 
 .buttonprop {

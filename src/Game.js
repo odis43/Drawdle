@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, {Component, useState, useEffect } from "react";
 import './Game.css';
 import { ReactSketchCanvas } from 'react-sketch-canvas';
 import Timer from './Timer';
@@ -87,17 +87,18 @@ import axios from "axios";
             ref={this.canvas}
             width="100"
             height="100"
-            strokeWidth={5}
+            strokeWidth={10}
             background  
             strokeColor = "black"
             canvasColor =  "white"
             style = {myStyle}
             />
             </div>
-            
+
           </div>
+          
         );
       }
       }
 
-    export default Game;
+export default Game;
