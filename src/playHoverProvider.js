@@ -14,3 +14,6 @@ export const MContext = React.createContext();
             </MContext.Provider>)
     }
 }
+
+export default playHoverProvider
+
