@@ -9,11 +9,12 @@ import Share from './Share';
 import './Title.css';
 import './PlayButton.css';
 import './Rule.css';
+import './Share.css';
 
 
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
-class App extends Component {
+class App extends React.Component {
   render() {
     return (
       <Router>
