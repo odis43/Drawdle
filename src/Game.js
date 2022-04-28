@@ -4,6 +4,7 @@ import { ReactSketchCanvas } from 'react-sketch-canvas';
 import Timer from './Timer';
 import axios from "axios";
 
+
     class Game extends Component {
 
       constructor(props) {
@@ -17,7 +18,7 @@ import axios from "axios";
       }
   
        componentDidMount () {
-        axios.get('https://random-word-form.herokuapp.com/random/noun')
+        axios.get('https://random-word-api.herokuapp.com/word')
       
         .then(response => {
           this.setState({
