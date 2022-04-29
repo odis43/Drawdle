@@ -1,8 +1,10 @@
-import React, {Component, useState, useEffect } from "react";
+import React, { Component } from 'react';
 import './Game.css';
 import { ReactSketchCanvas } from 'react-sketch-canvas';
 import Timer from './Timer';
 import axios from "axios";
+import npButton from './newpromptbutton'
+import submitbutton from './submitbutton.png'
 
 
     class Game extends Component {
@@ -18,7 +20,7 @@ import axios from "axios";
       }
   
        componentDidMount () {
-        axios.get('https://equal-wooded-square.glitch.me/api?generator=concrete-noun&list=noun')
+        axios.get('https://random-word-api.herokuapp.com/word')
       
         .then(response => {
           this.setState({
@@ -53,8 +55,14 @@ import axios from "axios";
              </div>)}
            </div>
 
-           <div>
-           <button onClick={() => { 
+          <div>
+            <a href='./Game'>
+              <button className='buttonprops'>
+                <img src={npButton} width = {125} height = {35} alt = 'New Prompt'/>
+              </button>
+            </a>
+            <a href='./Share'>
+            <button onClick={() => { 
             let W = this.handleWord()
             let valid = false;
             this.canvas.current.exportImage("jpeg")
@@ -77,9 +85,10 @@ import axios from "axios";
                 console.log(e);
               });
           }}
-          >
-            Submit Drawing!
+          className='buttonprops'>
+            <img src={submitbutton} width = {120} height = {35} alt = 'Submit!'/>
             </button>
+            </a>
            </div>
 
             <div className = 'Gamebox'>
@@ -99,6 +108,6 @@ import axios from "axios";
           
         );
       }
-      }
+    }
 
 export default Game;

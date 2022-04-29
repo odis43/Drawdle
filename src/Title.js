@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {Component} from 'react'
 import PlayButton from './PlayButton';
 import './Title.css';
 import difflogo from './difflogo'
