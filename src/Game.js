@@ -6,21 +6,23 @@ import axios from "axios";
 import npButton from './newpromptbutton'
 import submitbutton from './submitbutton.png'
 
-
     class Game extends Component {
-
+      
       constructor(props) {
         super(props);
         this.canvas = React.createRef();
         this.state = {
             loading: true,
             word: null,
-            valid: false
+            valid: false,
+            imgsrc: ""
         };
+        
       }
-  
+
        componentDidMount () {
         axios.get('https://random-word-api.herokuapp.com/word')
+  
       
         .then(response => {
           this.setState({
@@ -31,14 +33,18 @@ import submitbutton from './submitbutton.png'
         })
       }
 
+      
       handleWord() {
         return this.state.word
       }
-
+      sendImg = () => {
+        this.props.parentCallback(this.state.imgsrc);
+    }
         render() {
+          
            let blip = "";
           const myStyle={
-            backgroundImage: `url(${process.env.PUBLIC_URL})`, 
+            width: '100vw', 
             height: '100vh',
             backgroundPosition: 'relative',
             backgroundSize: 'cover',
@@ -47,57 +53,73 @@ import submitbutton from './submitbutton.png'
 
         return (
           <div style={myStyle}>
+            <div className='misc'>
+              <div className = "Timer">
               <Timer/>
-           <div>
-             {this.state.loading? (<div>loading..</div>):
-             (<div>
-               <div className="word">{this.state.word}</div>
-             </div>)}
-           </div>
+              </div>
+            <div>
+              {this.state.loading? (<div className='word font-link'> loading...</div>):
+              (<div>
+                <div className='font-link word'>{this.state.word}</div>
+              </div>)}
+            </div>
 
-          <div>
-            <a href='./Game'>
-              <button className='buttonprops'>
-                <img src={npButton} width = {125} height = {35} alt = 'New Prompt'/>
-              </button>
-            </a>
-            <a href='./Share'>
-            <button onClick={() => { 
-            let W = this.handleWord()
-            let valid = false;
-            this.canvas.current.exportImage("jpeg")
-              .then(imagedata => {
-                fetch('https://hf.space/embed/Salesforce/BLIP/+/api/predict/', { method: "POST", body: JSON.stringify({"data":[imagedata,"Image Captioning","None","Beam Sampling"]}), headers: { "Content-Type": "application/json" } })
+          
 
-                .then(function(response) { 
-                  return response.json(); })
-                .then(function(json_response)
+            <div>
+              <a href='./Game'>
+                <button className='buttonprops'>
+                  <img src={npButton} width = {115} height = {30} alt = 'New Prompt'/>
+                </button>
+              </a>
+
+
+              <button onClick={() => { 
+           
+              let W = this.handleWord()
+              let valid = this.state.valid
+
+              this.canvas.current.exportImage("jpeg") 
+            
+                .then(imagedata => { 
+                 this.setState({
+                    imgsrc: imagedata
+                  })
+                  fetch('https://hf.space/embed/Salesforce/BLIP/+/api/predict/', { method: "POST", body: JSON.stringify({"data":[imagedata,"Image Captioning","None","Beam Sampling"]}), headers: { "Content-Type": "application/json" } })
+                  .then(function(response) { 
+                   return response.json(); })
+                 .then(function(json_response)
+                 {blip = json_response.data 
                 
-                {blip = json_response.data 
-                  console.log(blip)
-                  console.log(W)
-                  valid = blip.includes(W)
-                  console.log(valid)
-                  
-                })
-              })
-              .catch(e => {
-                console.log(e);
-              });
-          }}
-          className='buttonprops'>
-            <img src={submitbutton} width = {120} height = {35} alt = 'Submit!'/>
-            </button>
-            </a>
-           </div>
+                 valid = blip.includes(W) 
+                 console.log(valid)
+
+                 window.location.href = valid ? "/Success" : "/Share"
+            
+                 })
+               })
+                .catch(e => {
+                 console.log(e);
+               });
+           }}
+
+            className='buttonprops'>
+
+             <img src={submitbutton} width = {100} height = {30} alt = 'Submit!' onMouseEnter= {this.sendImg} />
+              </button>
+            </div>
+
+            </div>
+
+
+
 
             <div className = 'Gamebox'>
             <ReactSketchCanvas 
             ref={this.canvas}
             width="100"
-            height="100"
+            
             strokeWidth={10}
-            background  
             strokeColor = "black"
             canvasColor =  "white"
             style = {myStyle}
@@ -108,6 +130,8 @@ import submitbutton from './submitbutton.png'
           
         );
       }
+      
+
     }
 
 export default Game;

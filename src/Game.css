@@ -1,17 +1,32 @@
 .Gamebox {
     top: 1.2em;
     cursor: url(Crossdot\ Precision\ Select.cur), auto;
+    overflow: hidden;
+    height: 100%;
 }
 
+
 .word {
-    font-size: x-large;
-    display:inline;
-    position: relative;
-   
-    left: 30em;
+    font-size: 400%;
+    display:flex;
+    justify-content: center;
 }
 .buttonprops {
     background-color: transparent;
     border: none;
     cursor: pointer;
+}
+
+.line {
+   color: red;
+   background-color: red;
+}
+
+.Timer {
+    position: relative;
+    
+}
+
+div.misc {
+    border-bottom:3px solid rgb(169, 31, 31);
 }

@@ -32,7 +32,7 @@ export default class Timer extends Component {
 
     render() {
         return (
-            <span>
+            <span className='TimerStyle'>
                {this.state.seconds}
             </span>
         );

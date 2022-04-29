@@ -21,10 +21,14 @@ import './Success.css';
                 <br></br><br></br><br></br><br></br>
                 Drawdle Recognized your image!
                 <br></br><br></br>
-                Share your artwork with all of your friends and see if they can do better!
+                <button onClick={() =>{
+                  console.log(this.props.messageFromParent)
+                }}>Share</button> your artwork with all of your friends and see if they can do better!
                 </span>
+                
               </div>
             </div>
+            
           </div>
         );
       }
