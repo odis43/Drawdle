@@ -1,12 +1,7 @@
 import React from 'react'
-<<<<<<< HEAD
-import './Title.css'
-import playHoverProvider from './playHoverProvider'
-=======
 import PlayButton from './PlayButton';
 import './Title.css';
 import difflogo from './difflogo'
->>>>>>> 25cb37c2668794df84a5180c6bd13e015825f1f5
 
 class Title extends React.Component {
 
@@ -35,20 +30,6 @@ class Title extends React.Component {
 
 
   render() {
-<<<<<<< HEAD
-    return (
-      <div className='logo'>
-          <view>
-        <img onMouseOver={this.handleMouseOver} onMouseOut={this.handleMouseOut} src={this.state.imgSrc} 
-        style={{width: 800,
-                flex: 1,
-                height: null,
-        }}
-                alt = 'Logo' />
-            </view>
-      </div>
-    );
-=======
     if (this.props.messageFromParent === false) {
       return (  
         <div className='logo'> 
@@ -79,7 +60,6 @@ class Title extends React.Component {
         </div>
       );
     }
->>>>>>> 25cb37c2668794df84a5180c6bd13e015825f1f5
   }
 }
 
