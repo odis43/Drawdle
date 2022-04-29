@@ -1,4 +1,4 @@
-import React, {Component, useState, useEffect } from "react";
+import React, { Component } from 'react';
 import './Game.css';
 import { ReactSketchCanvas } from 'react-sketch-canvas';
 import Timer from './Timer';
@@ -18,7 +18,7 @@ import axios from "axios";
       }
   
        componentDidMount () {
-        axios.get('https://equal-wooded-square.glitch.me/api?generator=concrete-noun&list=noun')
+        axios.get('https://random-word-api.herokuapp.com/word')
       
         .then(response => {
           this.setState({
@@ -80,6 +80,11 @@ import axios from "axios";
           >
             Submit Drawing!
             </button>
+            <a href='./Game'>
+              <button>
+                New Prompt!
+              </button>
+            </a>
            </div>
 
             <div className = 'Gamebox'>
@@ -99,6 +104,6 @@ import axios from "axios";
           
         );
       }
-      }
+    }
 
 export default Game;

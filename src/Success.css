@@ -1,16 +1,10 @@
-.bg {    
-    background-color: rgb(6, 54, 102);
+.Statements {
     display: flex;
     justify-content: center;
     text-align: center;
     position: relative;
     top: 3.3em;
     font-size:0.9cm;
-    line-height: 0.7cm;
+    line-height: 0.9cm;
     font-weight: 600;
-}
-
-.font {
-    font-size:0.5cm;
-    color: white;
-}
+};
