@@ -16,7 +16,7 @@ class Share extends React.Component {
             <div style={myStyle}>
             <div className='bg'>
             <h1 className='font'>
-                ———Nice Artwork but Drawdle couldn't recognize it :(————
+                ———Nice Artwork but Drawdle couldn't recognize it :(
                 <br></br>
                 ——————Try Again and share with your friends!——————
                 
@@ -48,6 +48,7 @@ class Share extends React.Component {
                 ⠀⠀⠀⠀⠁⠇⠡⠩⡫⢿⣝⡻⡮⣒⢽⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ 
                 <br></br>
                 ——————————————Share—————————————</h1>
+                <a href='./Game'><button>Try Again</button></a>
                 </div>
                 </div>
         );
