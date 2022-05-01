@@ -16,7 +16,6 @@ import submitbutton from './submitbutton.png'
         this.state = {
             loading: true,
             word: '',
-            valid: false,
             imgsrc: ""
         };
         
@@ -29,14 +28,10 @@ import submitbutton from './submitbutton.png'
       
         
         const data = await response.json();
-        console.log(data.word);
         this.setState({
           word: data.word,
           loading: false
         })
-        
-        
-  
       }
 
       
@@ -44,12 +39,7 @@ import submitbutton from './submitbutton.png'
         return this.state.word
       }
 
-      sendImg = () => {
-        this.props.parentCallback(this.state.imgsrc);
-    }
         render() {
-          
-           let blip = "";
           const myStyle={
             height: '100vh',
             backgroundPosition: 'relative',
@@ -83,8 +73,7 @@ import submitbutton from './submitbutton.png'
               <button onClick={() => { 
            
               let W = this.handleWord()
-              let valid = this.state.valid
-
+              
               this.canvas.current.exportImage("jpeg") 
             
                 .then(imagedata => { 
@@ -95,13 +84,16 @@ import submitbutton from './submitbutton.png'
                   .then(function(response) { 
                    return response.json(); })
                  .then(function(json_response)
-                 {blip = json_response.data 
-                
-                 valid = blip.includes(W) 
-                 console.log(valid)
+                 {
 
-                 window.location.href = valid ? "/Success" : "/Share"
-            
+                
+                var word = W;
+                var blip = json_response.data[0];
+                console.log(word);
+                console.log(blip);
+                
+                  window.location.href = blip.indexOf(word) > -1 ? "/Success" : "/Share"
+              
                  })
                })
                 .catch(e => {
