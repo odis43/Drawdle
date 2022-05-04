@@ -47,7 +47,7 @@ class Share extends React.Component {
                 <br></br>
                 ⠀⠀⠀⠀⠁⠇⠡⠩⡫⢿⣝⡻⡮⣒⢽⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ 
                 <br></br>
-                ——————————————Share—————————————</h1>
+                </h1>
                 <a href='./Game'><button>Try Again</button></a>
                 </div>
                 </div>

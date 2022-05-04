@@ -21,9 +21,7 @@ import './Success.css';
                 <br></br><br></br><br></br><br></br>
                 Drawdle Recognized your image!
                 <br></br><br></br>
-                <button onClick={() =>{
-                  console.log(this.props.messageFromParent)
-                }}>Share</button> your artwork with all of your friends and see if they can do better!
+                <a href="Game"><button >Try Again</button></a> your artwork with all of your friends and see if they can do better!
                 </span>
                 
               </div>

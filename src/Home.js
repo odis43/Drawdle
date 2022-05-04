@@ -27,7 +27,7 @@ class Homepg extends React.Component {
       backgroundRepeat: 'no-repeat'
     };
 
-    const {message} = this.state
+
 
     return (
       <div style={myStyle}>

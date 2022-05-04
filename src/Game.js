@@ -2,12 +2,11 @@ import React, { Component } from 'react';
 import './Game.css';
 import { ReactSketchCanvas } from 'react-sketch-canvas';
 import Timer from './Timer';
-import axios from "axios";
 import npButton from './newpromptbutton'
 import submitbutton from './submitbutton.png'
+import word from './words.json'
 
-
-
+const wordlist = word.nouns;
     class Game extends Component {
       
       constructor(props) {
@@ -21,25 +20,32 @@ import submitbutton from './submitbutton.png'
         
       }
 
-      
+       componentDidMount() {
+       
+        let W = null;
+        let index = Math.floor(Math.random() * (160 - 0 + 1)) + 0;
 
-      async componentDidMount() {
-        const response =  await fetch('https://api.wordnik.com/v4/words.json/randomWord?hasDictionaryDef=true&includePartOfSpeech=noun&excludePartOfSpeech=adjective%2C%20verb%2C%20adverb%2C%20interjection%2C%20pronoun%2C%20preposition%2C%20abbreviation%2C%20affix%2C%20article%2C%20auxiliary-verb%2C%20conjunction%2C%20definite-article%2C%20family-name%2C%20given-name%2C%20idiom%2C%20imperative%2C%20noun-plural%2C%20noun-posessive%2C%20past-participle%2C%20phrasal-prefix%2C%20proper-noun%2C%20proper-noun-plural%2C%20suffix%2C%20verb-intransitive%2C%20verb-transitive&minCorpusCount=100000&maxCorpusCount=100000000000&minDictionaryCount=1&maxDictionaryCount=-1&minLength=5&maxLength=-1&api_key=9mawv4j6y91w6khqbojxmmso2m5q8z70opf2x4muaaxwps8py');
-      
+        wordlist.map((data,i) => {
+          return (
+            i === index ? W = data: <p></p>
+          )
+        })
         
-        const data = await response.json();
         this.setState({
-          word: data.word,
-          loading: false
+          word: W,
+          loading:false
         })
       }
 
       
+
       handleWord() {
         return this.state.word
       }
 
+
         render() {
+ 
           const myStyle={
             height: '100vh',
             backgroundPosition: 'relative',
@@ -48,21 +54,21 @@ import submitbutton from './submitbutton.png'
           };
 
         return (
+
           <div style={myStyle}>
             <div className='misc'>
               <div className = "Timer">
               <Timer/>
               </div>
-            <div>
+
+              <div>
               {this.state.loading? (<div className='word font-link'> loading...</div>):
               (<div>
                 <div className='font-link word'>{this.state.word}</div>
               </div>)}
             </div>
 
-          
-
-            <div>
+              <div>
               <a href='./Game'>
                 <button className='buttonprops'>
                   <img src={npButton} width = {115} height = {30} alt = 'New Prompt'/>
@@ -73,6 +79,7 @@ import submitbutton from './submitbutton.png'
               <button onClick={() => { 
            
               let W = this.handleWord()
+              console.log(W);
               
               this.canvas.current.exportImage("jpeg") 
             
@@ -86,12 +93,11 @@ import submitbutton from './submitbutton.png'
                  .then(function(json_response)
                  {
 
-                
                 var word = W;
                 var blip = json_response.data[0];
                 console.log(word);
                 console.log(blip);
-                
+
                   window.location.href = blip.indexOf(word) > -1 ? "/Success" : "/Share"
               
                  })
@@ -108,9 +114,6 @@ import submitbutton from './submitbutton.png'
             </div>
 
             </div>
-
-
-
 
             <div className = 'Gamebox'>
             <ReactSketchCanvas 
@@ -129,7 +132,6 @@ import submitbutton from './submitbutton.png'
         );
       }
       
-
     }
 
 export default Game;
