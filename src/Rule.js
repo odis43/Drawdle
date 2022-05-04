@@ -21,13 +21,13 @@ import CButton from './CButton';
                 <br></br><br></br>
                 Rules:
                 <br></br><br></br><br></br><br></br>
-                1. Don’t lift your finger from your mouse
+                1. A 3 minute timer will begin as soon as you click continue
                 <br></br><br></br>
-                2. A 3 minute timer will begin as soon as you click continue
+                2. Draw the prompt as accurately as you can!
                 <br></br><br></br>
-                3. Draw the prompt as accurately as you can!
+                3. Don't like your prompt? Click New Prompt!
                 <br></br><br></br>
-                4. Don't like your prompt? Click New Prompt!
+                4. You CANNOT ERASE! Be careful as you draw!
                 </span>
               </div>
               <CButton />
