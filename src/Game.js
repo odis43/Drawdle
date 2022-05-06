@@ -5,6 +5,7 @@ import Timer from './Timer';
 import npButton from './newpromptbutton'
 import submitbutton from './submitbutton.png'
 import word from './words.json'
+import { formControlUnstyledClasses } from '@mui/base';
 
 const wordlist = word.nouns;
     class Game extends Component {
@@ -15,7 +16,7 @@ const wordlist = word.nouns;
         this.state = {
             loading: true,
             word: '',
-            imgsrc: ""
+            imgsrc: "",
         };
         
       }
@@ -45,7 +46,7 @@ const wordlist = word.nouns;
 
 
         render() {
- 
+
           const myStyle={
             height: '100vh',
             backgroundPosition: 'relative',
@@ -54,7 +55,6 @@ const wordlist = word.nouns;
           };
 
         return (
-
           <div style={myStyle}>
             <div className='misc'>
               <div className = "Timer">
@@ -74,8 +74,6 @@ const wordlist = word.nouns;
                   <img src={npButton} width = {115} height = {30} alt = 'New Prompt'/>
                 </button>
               </a>
-
-
               <button onClick={() => { 
            
               let W = this.handleWord()
@@ -87,19 +85,19 @@ const wordlist = word.nouns;
                  this.setState({
                     imgsrc: imagedata
                   })
-                  fetch('https://hf.space/embed/Salesforce/BLIP/+/api/predict/', { method: "POST", body: JSON.stringify({"data":[imagedata,"Image Captioning","None","Beam Sampling"]}), headers: { "Content-Type": "application/json" } })
+                  fetch('https://hf.space/embed/Salesforce/BLIP/+/api/predict/', { method: "POST", body: JSON.stringify({"data":[imagedata,"Image Captioning","None","Nucleus sampling"]}), headers: { "Content-Type": "application/json" } })
                   .then(function(response) { 
                    return response.json(); })
                  .then(function(json_response)
                  {
 
-                var word = W;
-                var blip = json_response.data[0];
-                console.log(word);
-                console.log(blip);
+                var word = W.toLowerCase();
+                var blip = json_response.data[0].toLowerCase();
+
+                  console.log(word);
+                  console.log(blip);
 
                   window.location.href = blip.indexOf(word) > -1 ? "/Success" : "/Share"
-              
                  })
                })
                 .catch(e => {
