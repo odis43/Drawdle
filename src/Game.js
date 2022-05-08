@@ -5,7 +5,6 @@ import Timer from './Timer';
 import npButton from './newpromptbutton'
 import submitbutton from './submitbutton.png'
 import word from './words.json'
-import { formControlUnstyledClasses } from '@mui/base';
 
 const wordlist = word.nouns;
     class Game extends Component {
@@ -17,6 +16,7 @@ const wordlist = word.nouns;
             loading: true,
             word: '',
             imgsrc: "",
+            caption: ""
         };
         
       }
@@ -43,6 +43,10 @@ const wordlist = word.nouns;
       handleWord() {
         return this.state.word
       }
+
+      sendData = () => {
+        this.props.parentCallback(this.state.caption);
+    }
 
 
         render() {
@@ -74,8 +78,9 @@ const wordlist = word.nouns;
                   <img src={npButton} width = {115} height = {30} alt = 'New Prompt'/>
                 </button>
               </a>
-              <button onClick={() => { 
-           
+              <button onClick={() => {
+                
+                
               let W = this.handleWord()
               console.log(W);
               
@@ -93,11 +98,15 @@ const wordlist = word.nouns;
 
                 var word = W.toLowerCase();
                 var blip = json_response.data[0].toLowerCase();
+               
 
                   console.log(word);
                   console.log(blip);
 
-                  window.location.href = blip.indexOf(word) > -1 ? "/Success" : "/Share"
+                  localStorage.setItem("caption", blip);
+
+                  window.location.href = blip.indexOf(word) > -1 ? '/Success': '/Share'
+                  
                  })
                })
                 .catch(e => {
@@ -107,7 +116,7 @@ const wordlist = word.nouns;
 
             className='buttonprops'>
 
-             <img src={submitbutton} width = {100} height = {30} alt = 'Submit!' onMouseEnter= {this.sendImg} />
+             <img src={submitbutton} width = {100} height = {30} alt = 'Submit!'/>
               </button>
             </div>
 

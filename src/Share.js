@@ -1,7 +1,20 @@
 import React from 'react';
 import './Share.css'
+import Button from 'react-bootstrap/Button';
 
 class Share extends React.Component {
+
+    constructor (props) {
+        var cap = localStorage.getItem("caption");
+        var theCaption = cap;
+        var say = `Here is what Drawdle thought you drew:`;
+        super(props);
+        this.state = {
+            first: "Sorry this drawing sucks",
+            second: say,
+            caption: theCaption
+        };
+    }
 
     render() {
         const myStyle={
@@ -12,14 +25,23 @@ class Share extends React.Component {
             backgroundRepeat: 'no-repeat'
           };
 
+          
+          console.log(this.state.caption)
         return (
             <div style={myStyle}>
             <div className='bg'>
             <h1 className='font'>
-                ———Nice Artwork but Drawdle couldn't recognize it :(
                 <br></br>
-                ——————Try Again and share with your friends!——————
-                
+                {this.state.first}
+                <br></br>
+                {this.state.second}
+                <br></br>
+                <br></br>
+                {this.state.caption}
+                <br></br>
+                <br></br>
+                <a href='/Game'><button type="button" class="btn btn-light font-link">Try Again</button></a>
+                <br></br>
                 <br></br>
                 ⠀⣞⢽⢪⢣⢣⢣⢫⡺⡵⣝⡮⣗⢷⢽⢽⢽⣮⡷⡽⣜⣜⢮⢺⣜⢷⢽⢝⡽⣝ 
                 <br></br>
@@ -48,7 +70,6 @@ class Share extends React.Component {
                 ⠀⠀⠀⠀⠁⠇⠡⠩⡫⢿⣝⡻⡮⣒⢽⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ 
                 <br></br>
                 </h1>
-                <a href='./Game'><button>Try Again</button></a>
                 </div>
                 </div>
         );

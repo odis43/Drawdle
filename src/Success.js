@@ -11,6 +11,7 @@ import './Success.css';
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat'
           };
+
           
         return (
           <div style={myStyle}>
