@@ -21,7 +21,7 @@ import CButton from './CButton';
                 <br></br><br></br>
                 Rules:
                 <br></br><br></br><br></br><br></br>
-                1. A 3 minute timer will begin as soon as you click continue
+                1. A 90 second timer will begin as soon as you click continue
                 <br></br><br></br>
                 2. Draw the prompt as accurately as you can!
                 <br></br><br></br>
