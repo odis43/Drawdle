@@ -24,3 +24,8 @@
     margin: 3px 0px;
     cursor: pointer;
 }
+
+div.caption {
+    font-weight: bold;
+    color: white;
+}

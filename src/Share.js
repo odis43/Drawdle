@@ -12,8 +12,8 @@ class Share extends React.Component {
         this.state = {
             first: "Sorry this drawing sucks",
             second: say,
-            caption: theCaption,
-            imgSrc: require('./tryagainbefore.png'),
+            caption: theCaption.slice(8),
+            imgSrc: require('./tryagainwhite.png'),
         };
         this.handleMouseOver = this.handleMouseOver.bind(this);
         this.handleMouseOut = this.handleMouseOut.bind(this);
@@ -27,7 +27,7 @@ class Share extends React.Component {
 
     handleMouseOut () {
         this.setState({
-            imgSrc: require('./tryagainbefore.png')
+            imgSrc: require('./tryagainwhite.png')
         });
     }
 
@@ -50,9 +50,8 @@ class Share extends React.Component {
                 {this.state.second}
                 <br></br>
                 <br></br>
-                {this.state.caption}
-                <br></br>
-                <br></br>
+                <div className='caption'>"{this.state.caption} "</div><br></br>
+               
                <a href='./Game'>
                 <button className='buttonprop'>
                 <img onMouseOver={this. handleMouseOver} onMouseOut={this.handleMouseOut} 

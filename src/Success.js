@@ -32,7 +32,7 @@ import Button from 'react-bootstrap/Button';
                 WINNER!
                 <br></br><br></br><br></br><br></br>
                 Drawdle Recognized your image!
-                <br></br><br></br>
+                <br></br><br></br><br></br>
                 <a href='./Game'>
                 <button className='buttonprop'>
                 <img
