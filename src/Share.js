@@ -12,8 +12,23 @@ class Share extends React.Component {
         this.state = {
             first: "Sorry this drawing sucks",
             second: say,
-            caption: theCaption
+            caption: theCaption,
+            imgSrc: require('./tryagainbefore.png'),
         };
+        this.handleMouseOver = this.handleMouseOver.bind(this);
+        this.handleMouseOut = this.handleMouseOut.bind(this);
+    }
+
+    handleMouseOver () {
+        this.setState({
+            imgSrc: require('./tryagainafter.png')
+        });
+    }
+
+    handleMouseOut () {
+        this.setState({
+            imgSrc: require('./tryagainbefore.png')
+        });
     }
 
     render() {
@@ -25,8 +40,6 @@ class Share extends React.Component {
             backgroundRepeat: 'no-repeat'
           };
 
-          
-          console.log(this.state.caption)
         return (
             <div style={myStyle}>
             <div className='bg'>
@@ -40,7 +53,13 @@ class Share extends React.Component {
                 {this.state.caption}
                 <br></br>
                 <br></br>
-                <a href='/Game'><button type="button" class="btn btn-light font-link">Try Again</button></a>
+               <a href='./Game'>
+                <button className='buttonprop'>
+                <img onMouseOver={this. handleMouseOver} onMouseOut={this.handleMouseOut} 
+                src={this.state.imgSrc} width = {225} height = {50} alt = 'Try Again'/>
+                </button>
+              </a>
+              
                 <br></br>
                 <br></br>
                 ⠀⣞⢽⢪⢣⢣⢣⢫⡺⡵⣝⡮⣗⢷⢽⢽⢽⣮⡷⡽⣜⣜⢮⢺⣜⢷⢽⢝⡽⣝ 

@@ -28,7 +28,7 @@ class CButton extends React.Component {
         this.setState({
             imgSrc: require('./cbuttoncolourful.png')
         });
-        this.changeState();
+        
     }
 
     handleMouseOut () {
