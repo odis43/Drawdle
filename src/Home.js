@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import Nav from './Nav';
-import Home from './Home';
-import Game from './Game';
 
 //import bgimg from './image/drawdleimg.png';
 import Title from './Title';
@@ -10,6 +7,7 @@ import Title from './Title';
 import './Title.css';
 import PlayButton from './PlayButton';
 import './PlayButton.css';
+
 
 class Homepg extends React.Component {
   state = {message: true}
@@ -32,7 +30,7 @@ class Homepg extends React.Component {
     return (
       <div style={myStyle}>
       <div className="App">
-        <PlayButton parentCallback={this.handleCallback} />
+        
         <Title messageFromParent={this.state.message} />
       </div>
     </div>

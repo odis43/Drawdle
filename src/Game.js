@@ -24,7 +24,7 @@ const wordlist = word.nouns;
        componentDidMount() {
        
         let W = null;
-        let index = Math.floor(Math.random() * (160 - 0 + 1)) + 0;
+        let index = Math.floor(Math.random() * (159 - 0 + 1)) + 0;
 
         wordlist.map((data,i) => {
           return (
@@ -37,8 +37,6 @@ const wordlist = word.nouns;
           loading:false
         })
       }
-
-      
 
       handleWord() {
         return this.state.word
