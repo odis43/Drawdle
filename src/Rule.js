@@ -30,7 +30,7 @@ import CButton from './CButton';
                 4. You CANNOT ERASE! Be careful as you draw!
                 </span>
               </div>
-              <CButton />
+             <CButton></CButton>
             </div>
           </div>
         );
