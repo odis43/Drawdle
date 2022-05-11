@@ -3,7 +3,6 @@ import './Game.css';
 import { ReactSketchCanvas } from 'react-sketch-canvas';
 import Timer from './Timer';
 import npButton from './newpromptbutton'
-import submitbutton from './submitbutton.png'
 import word from './words.json'
 
 const wordlist = word.nouns;
@@ -16,8 +15,10 @@ const wordlist = word.nouns;
             loading: true,
             word: '',
             imgsrc: "",
-            caption: ""
+            caption: "",
+            subButton: require('./submitbutton.png')
         };
+        this.handleMouseClick = this.handleMouseClick.bind(this);
         
       }
 
@@ -37,6 +38,13 @@ const wordlist = word.nouns;
           loading:false
         })
       }
+
+  handleMouseClick() {
+    this.setState({
+      subButton: require('./newpromptbutton') //just need to add the new button
+    });
+  }
+      
 
       handleWord() {
         return this.state.word
@@ -76,8 +84,9 @@ const wordlist = word.nouns;
                   <img src={npButton} width = {115} height = {30} alt = 'New Prompt'/>
                 </button>
               </a>
+
               <button onClick={() => {
-                
+             
                 
               let W = this.handleWord()
               console.log(W);
@@ -114,7 +123,7 @@ const wordlist = word.nouns;
 
             className='buttonprops'>
 
-             <img src={submitbutton} width = {100} height = {30} alt = 'Submit!'/>
+             <img onMouseDown={this.handleMouseClick} src={this.state.subButton} width = {100} height = {30} alt = 'Submit!'/>
               </button>
             </div>
 
