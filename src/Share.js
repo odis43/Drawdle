@@ -13,7 +13,7 @@ class Share extends React.Component {
             first: "Sorry this drawing sucks",
             second: say,
             caption: theCaption.slice(8),
-            imgSrc: require('./tryagainwhite.png'),
+            imgSrc: require('./tryagainbefore.png'),
         };
         this.handleMouseOver = this.handleMouseOver.bind(this);
         this.handleMouseOut = this.handleMouseOut.bind(this);
@@ -27,7 +27,7 @@ class Share extends React.Component {
 
     handleMouseOut () {
         this.setState({
-            imgSrc: require('./tryagainwhite.png')
+            imgSrc: require('./tryagainbefore.png')
         });
     }
 

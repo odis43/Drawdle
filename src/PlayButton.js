@@ -50,7 +50,7 @@ class PlayButton extends React.Component {
 
     render() {
         return (
-          <div className='playbutton'>
+          <div className='playbutton flex-sm-colomn'>
               <a href='./Rule'>
                 <button className='buttonprop2' onClick={this.handleClick} disabled={this.state.disabled}>
                 {this.state.disabled ? '' : 

@@ -1,10 +1,9 @@
 .bg {    
-    background-color: rgb(6, 54, 102);
     display: flex;
     justify-content: center;
     text-align: center;
     position: relative;
-    top: 3.3em;
+    top: 4.1em;
     font-size:0.9cm;
     line-height: 0.7cm;
     font-weight: 600;
@@ -12,7 +11,7 @@
 
 .font {
     font-size:0.5cm;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 .buttonprop {
@@ -27,5 +26,5 @@
 
 div.caption {
     font-weight: bold;
-    color: white;
+    color: rgb(0, 0, 0);
 }

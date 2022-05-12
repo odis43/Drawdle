@@ -29,7 +29,7 @@ class Homepg extends React.Component {
 
     return (
       <div style={myStyle}>
-      <div className="App">
+      <div className="App flex-colomn">
         <PlayButton parentCallback={this.handleCallback}/>
         <Title messageFromParent={this.state.message} />
       </div>
