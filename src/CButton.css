@@ -1,11 +1,10 @@
-.cbutton {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    top: 7.5em;
+div.cbutton {
+    position: absolute;
+    top: 35em;
+    right: 43em;
 }
 
-.buttonprop {
+.buttonprop {    
     background-color: rgba(241, 249, 250, 0);
     border: none;
     font-size: 20px;
