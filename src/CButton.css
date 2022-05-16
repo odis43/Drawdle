@@ -5,12 +5,4 @@
     top: 7.5em;
 }
 
-.buttonprop {
-    background-color: rgba(241, 249, 250, 0);
-    border: none;
-    font-size: 20px;
-    padding: 5px 30px;
-    border-radius: 10px;
-    margin: 3px 0px;
-    cursor: pointer;
-}
+
