@@ -41,7 +41,7 @@ const wordlist = word.nouns;
 
   handleMouseClick() {
     this.setState({
-      subButton: require('./newpromptbutton') //just need to add the new button
+      subButton: require('./loading.png') //just need to add the new button
     });
   }
       

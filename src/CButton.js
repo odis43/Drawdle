@@ -42,7 +42,7 @@ class CButton extends React.Component {
               <a href='./Game'>
                 <button className='buttonprop' onClick={this.handleClick} disabled={this.state.disabled}>
                 {this.state.disabled ? '' : 
-                <img onMouseOver={this. handleMouseOver} onMouseOut={this.handleMouseOut} 
+                <img onMouseOver={this. handleMouseOver} onMouseOut={this.handleMouseOut}
                 src={this.state.imgSrc} width = {225} height = {50} alt = 'Continue'/>}
                 </button>
               </a>

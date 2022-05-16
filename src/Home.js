@@ -29,10 +29,10 @@ class Homepg extends React.Component {
 
     return (
       <div style={myStyle}>
-      <div className="App flex-colomn">
-        <PlayButton parentCallback={this.handleCallback}/>
-        <Title messageFromParent={this.state.message} />
-      </div>
+        <div className="App">
+          <PlayButton parentCallback={this.handleCallback}/>
+          <Title messageFromParent={this.state.message} />
+        </div>
     </div>
     );
   }
