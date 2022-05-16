@@ -1,5 +1,8 @@
 import React, {Component} from "react";
+
+import './App.css';
 import './Rule.css';
+import './CButton.css';
 import CButton from './CButton';
 
     class Menu extends Component {
