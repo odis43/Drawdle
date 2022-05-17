@@ -1,7 +1,7 @@
 .cbutton {
-    display: flex !important; 
-    justify-content: center !important;
-    position: relative !important;
+    display: flex ; 
+    justify-content: center;
+    position: relative;
     top: 7.5em ;
 }
 
