@@ -1,21 +1,35 @@
-import React, {Component} from "react";
-import './Rule.css';
-import CButton from './CButton';
+import React, { Component } from 'react';
+import './App.css';
 
-    class Menu extends Component {
-        render() {
-          const myStyle={
-            backgroundImage: `url(${process.env.PUBLIC_URL + '/paper.png'})`, 
-            height: '100vh',
-            backgroundPosition: 'relative',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat'
-          };
-          
-        return (
-          <div style={myStyle}>
-            <div className = 'Rule'>
-              <div className='ruleParagraph'>
+//import bgimg from './image/drawdleimg.png';
+import CButton from './CButton';
+//import Routes from './Routes';
+import './Title.css';
+import './PlayButton.css';
+
+
+class Share extends React.Component {
+  state = {message: true}
+
+  handleCallback = (PlayButtonData) => {
+    this.setState({message: PlayButtonData})
+  }
+
+  render() {
+    const myStyle={
+      backgroundImage: `url(${process.env.PUBLIC_URL + '/paper.png'})`,  
+      height: '100vh',
+      backgroundPosition: 'relative',
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat'
+    };
+
+
+
+    return (
+      <div style={myStyle}>
+        <div className="App">
+        <div className='ruleParagraph'>
                 <span className='font-link'>
                 Welcome to Drawdle!
                 <br></br><br></br>
@@ -30,11 +44,12 @@ import CButton from './CButton';
                 4. You CANNOT ERASE! Be careful as you draw!
                 </span>
               </div>
-             <CButton></CButton>
-            </div>
-          </div>
-        );
-      }
-    }
+          <CButton/>
+        </div>
+    </div>
+    );
+  }
+}
 
-export default Menu
+
+export default Share;
