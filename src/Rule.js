@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, {Component} from "react";
 
-//import bgimg from './image/drawdleimg.png';
+import './App.css';
+import './Rule.css';
+import './CButton.css';
 import CButton from './CButton';
 //import Routes from './Routes';
 import './Title.css';
